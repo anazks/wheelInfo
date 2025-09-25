@@ -3,9 +3,383 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Wheel Alignment Info - Professional Shop Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'auto-blue': '#1e40af',
+                        'auto-orange': '#ea580c',
+                        'auto-dark': '#1f2937'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .pulse-glow {
+            animation: pulse-glow 2s infinite;
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+            }
+            50% { 
+                box-shadow: 0 0 30px rgba(59, 130, 246, 0.7), 0 0 40px rgba(59, 130, 246, 0.3);
+            }
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .feature-icon {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+        }
+    </style>
 </head>
-<body>
-    
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md shadow-lg z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-r from-auto-blue to-blue-600 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                        </svg>
+                    </div>
+                    <span class="text-xl font-bold text-auto-dark">Wheel Alignment Info</span>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#features" class="text-gray-600 hover:text-auto-blue transition-colors">Features</a>
+                    <a href="#benefits" class="text-gray-600 hover:text-auto-blue transition-colors">Benefits</a>
+                    <a href="#future" class="text-gray-600 hover:text-auto-blue transition-colors">What's Next</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-20 pb-16 text-white overflow-hidden">
+        <div class="container mx-auto px-4 pt-8">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-8 lg:mb-0">
+                    <div class="inline-block bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+                        <span class="text-sm font-medium">🚀 Coming Soon to Play Store</span>
+                    </div>
+                    <h1 class="text-4xl lg:text-6xl font-bold leading-tight mb-6">
+                        Revolutionize Your 
+                        <span class="bg-gradient-to-r from-yellow-300 to-orange-400 bg-clip-text text-transparent">
+                            Wheel Alignment
+                        </span> 
+                        Business
+                    </h1>
+                    <p class="text-xl lg:text-2xl mb-8 text-blue-100 leading-relaxed">
+                        Transform your shop with digital customer management, automated reminders, and streamlined operations - all from your mobile device.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="pulse-glow bg-auto-orange hover:bg-orange-600 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all">
+                            Get Early Access
+                        </button>
+                        <button class="border-2 border-white/30 hover:bg-white/10 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all">
+                            Watch Demo
+                        </button>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 flex justify-center">
+                    <div class="floating relative">
+                        <div class="w-80 h-80 lg:w-96 lg:h-96 bg-white/10 backdrop-blur-lg rounded-3xl flex items-center justify-center">
+                            <svg class="w-48 h-48 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 18.5c-4.5 0-8.5-2-8.5-4.5s4-4.5 8.5-4.5 8.5 2 8.5 4.5-4 4.5-8.5 4.5z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 9.5c-4.5 0-8.5-2-8.5-4.5S7.5.5 12 .5s8.5 2 8.5 4.5S16.5 9.5 12 9.5z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12l2 2 4-4"/>
+                                <circle cx="12" cy="14" r="8" stroke-width="1"/>
+                            </svg>
+                        </div>
+                        <div class="absolute -top-4 -right-4 w-24 h-24 bg-yellow-400 rounded-full flex items-center justify-center">
+                            <span class="text-2xl">📱</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Statement -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-auto-dark mb-4">The Current Challenge</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Most wheel alignment shops are stuck in the past, losing customers and revenue</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v2h-2v-2zm0-8h2v6h-2V9z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Manual Record Keeping</h3>
+                                <p class="text-gray-600">Handwritten registers lead to lost data, illegible notes, and missed follow-ups</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Poor Customer Retention</h3>
+                                <p class="text-gray-600">No systematic way to remind customers about maintenance schedules</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v2h-2v-2zm0-8h2v6h-2V9z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Limited Growth Potential</h3>
+                                <p class="text-gray-600">Inefficient processes prevent scaling and business expansion</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center">
+                    <div class="relative">
+                        <div class="w-80 h-80 bg-gray-100 rounded-2xl flex items-center justify-center">
+                            <svg class="w-32 h-32 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            </svg>
+                        </div>
+                        <div class="absolute top-4 right-4 w-16 h-16 bg-red-500 rounded-full flex items-center justify-center">
+                            <span class="text-2xl">❌</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-auto-dark mb-4">Powerful Features</h2>
+                <p class="text-xl text-gray-600">Everything you need to modernize your wheel alignment business</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-hover bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-auto-dark mb-4">Smart Customer Management</h3>
+                    <p class="text-gray-600 leading-relaxed">Comprehensive customer profiles with contact details, vehicle information, and service preferences - all organized and searchable.</p>
+                </div>
+                
+                <div class="card-hover bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-auto-dark mb-4">Complete Service History</h3>
+                    <p class="text-gray-600 leading-relaxed">Track every service with detailed records including dates, procedures, parts used, and technician notes for perfect continuity.</p>
+                </div>
+                
+                <div class="card-hover bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-auto-dark mb-4">Automated SMS Reminders</h3>
+                    <p class="text-gray-600 leading-relaxed">Intelligent reminder system that automatically sends timely SMS notifications to customers for scheduled maintenance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-auto-dark mb-4">Transform Your Business</h2>
+                <p class="text-xl text-gray-600">See the immediate impact on your operations and revenue</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="space-y-8">
+                    <div class="flex items-start space-x-6">
+                        <div class="flex-shrink-0 w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center">
+                            <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-auto-dark mb-2">90% Reduction in Data Loss</h3>
+                            <p class="text-gray-600">Digital records ensure no customer information is ever lost or becomes unreadable</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-6">
+                        <div class="flex-shrink-0 w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center">
+                            <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-auto-dark mb-2">40% Increase in Repeat Customers</h3>
+                            <p class="text-gray-600">Automated reminders bring customers back exactly when they need service</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-6">
+                        <div class="flex-shrink-0 w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center">
+                            <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13 2.05v2.02c3.95.49 7 3.85 7 7.93 0 4.08-3.05 7.44-7 7.93v2.02c5.05-.5 9-4.76 9-9.95S18.05 2.55 13 2.05zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-auto-dark mb-2">3x Faster Customer Lookup</h3>
+                            <p class="text-gray-600">Instant search and retrieval of customer information and service history</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center items-center">
+                    <div class="relative">
+                        <div class="w-80 h-80 bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl flex items-center justify-center transform rotate-3">
+                            <svg class="w-40 h-40 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                            </svg>
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 w-20 h-20 bg-yellow-400 rounded-full flex items-center justify-center">
+                            <span class="text-3xl">📈</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Enhancements -->
+    <section id="future" class="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-auto-dark mb-4">What's Coming Next</h2>
+                <p class="text-xl text-gray-600">Exciting features on our roadmap to further enhance your business</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-xl p-6 shadow-lg border border-purple-100">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="text-2xl">🌍</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-auto-dark mb-2">Multi-Language Support</h3>
+                    <p class="text-gray-600 text-sm">Serve diverse customer bases with support for regional languages</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg border border-green-100">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="text-2xl">💬</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-auto-dark mb-2">WhatsApp Integration</h3>
+                    <p class="text-gray-600 text-sm">Send reminders and updates through the most popular messaging platform</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg border border-blue-100">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="text-2xl">🤖</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-auto-dark mb-2">AI Recommendations</h3>
+                    <p class="text-gray-600 text-sm">Predictive maintenance suggestions based on vehicle data and history</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg border border-orange-100">
+                    <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="text-2xl">☁️</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-auto-dark mb-2">Cloud Backup</h3>
+                    <p class="text-gray-600 text-sm">Secure cloud storage with multi-branch support for growing businesses</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-auto-dark text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6">Ready to Transform Your Business?</h2>
+            <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                Join the digital revolution in wheel alignment services. Be among the first to experience the future of shop management.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-auto-orange hover:bg-orange-600 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all">
+                    Get Early Access
+                </button>
+                <button class="border-2 border-gray-600 hover:bg-gray-800 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all">
+                    Schedule Demo
+                </button>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-gray-700">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                        <div class="w-10 h-10 bg-gradient-to-r from-auto-blue to-blue-600 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold">Wheel Alignment Info</span>
+                    </div>
+                    <div class="text-gray-400">
+                        <p>© 2025 All rights reserved</p>
+                        <p>Contact: info@wheelalignmentinfo.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
